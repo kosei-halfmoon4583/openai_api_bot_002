@@ -5,6 +5,7 @@ import openai
 
 # openai.api_key = secret_keys.openai_api_key
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
+system_prompt = st.secrets.content.system_prompt
 
 
 # system_prompt = """
