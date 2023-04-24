@@ -7,7 +7,6 @@ import openai
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 system_prompt = st.secrets.content.system_prompt
 
-
 # system_prompt = """
 # あなたは優秀なプログラミング講師です。
 # プログラミング上達のために、生徒のレベルに合わせて適切なアドバイスを行ってください。
@@ -21,13 +20,13 @@ system_prompt = st.secrets.content.system_prompt
 # * 歴史
 # """
 
-# st.session_stateを使いメッセージのやりとりを保存
+# Save messages to st.session_state
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
         {"role": "system", "content": system_prompt}
-        ]
+    ]
 
-# チャットボットとやりとりする関数
+# Function of ChatGPT API communication.
 def communicate():
     messages = st.session_state["messages"]
 
@@ -44,19 +43,21 @@ def communicate():
 
     st.session_state["user_input"] = ""  # 入力欄を消去
 
+# User Interface
+import streamlit as st
 
-# ユーザーインターフェイスの構築
-st.title(" 「PGI プログラミング講師」")
+st.subheader('This is a subheader')
+st.subheader('A subheader with _italics_ :blue[colors] and emojis :sunglasses:')
 st.image("04_programming.jpg")
-# st.image("04_programming.jpg")
+st.subheader(" 「:gray[PGI] :blue[プログラミング] :gray[講師]」")
 st.write("プログラミングに関して、何でも聞いてください。")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
 
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
-
-    for message in reversed(messages[1:]):  # 直近のメッセージを上に
+# 直近のメッセージを上に表示する
+    for message in reversed(messages[1:]):  
         speaker = "🙂"
         if message["role"]=="assistant":
             speaker="🤖"
