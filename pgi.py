@@ -49,7 +49,8 @@ import streamlit as st
 # st.subheader('This is a subheader')
 # st.subheader('A subheader with _italics_ :blue[colors] and emojis :sunglasses:')
 st.image("PGI_image03.png")
-st.subheader(":green[PGI] :blue[プログラミング] :green[講師] emojis :sunglasses:")
+# st.subheader(":green[PGI] :blue[プログラミング] :green[講師] :sunglasses:")
+st.subheader(st.image("primagest.png") ":green[PGI] :blue[プログラミング] :green[講師] :sunglasses:")
 st.write("プログラミングに関して、何でも聞いてください。")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
