@@ -46,10 +46,10 @@ def communicate():
 # User Interface
 import streamlit as st
 
-st.subheader('This is a subheader')
-st.subheader('A subheader with _italics_ :blue[colors] and emojis :sunglasses:')
-st.image("04_programming.jpg")
-st.subheader("PGI :blue[プログラミング] 講師")
+# st.subheader('This is a subheader')
+# st.subheader('A subheader with _italics_ :blue[colors] and emojis :sunglasses:')
+st.image("PGI_image03.png")
+st.subheader(":green[PGI] :blue[プログラミング] :green[講師] emojis :sunglasses:")
 st.write("プログラミングに関して、何でも聞いてください。")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
