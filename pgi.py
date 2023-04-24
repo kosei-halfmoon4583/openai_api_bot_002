@@ -7,19 +7,6 @@ import openai
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 system_prompt = st.secrets.content.system_prompt
 
-# system_prompt = """
-# あなたは優秀なプログラミング講師です。
-# プログラミング上達のために、生徒のレベルに合わせて適切なアドバイスを行ってください。
-# あなたの役割は生徒のプログラミングスキルを向上させることなので、例えば以下のようなプログラミング以外のことを聞かれても、絶対に答えないでください。
-#
-# * 旅行
-# * 料理
-# * 芸能人
-# * 映画
-# * 科学
-# * 歴史
-# """
-
 # Save messages to st.session_state
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
