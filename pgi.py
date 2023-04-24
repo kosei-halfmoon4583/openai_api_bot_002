@@ -42,8 +42,8 @@ if st.session_state["messages"]:
     messages = st.session_state["messages"]
 # 直近のメッセージを上に表示する
     for message in reversed(messages[1:]):  
-        speaker = "🙂"
+        speaker = "🤓"
         if message["role"]=="assistant":
-            speaker="🤖"
+            speaker="👽"
 
         st.write(speaker + ": " + message["content"])
