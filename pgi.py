@@ -32,8 +32,8 @@ def communicate():
 
 # User Interface
 import streamlit as st
-# st.image("PGI_image03.png")
-st.image("PGI_image02.jpeg")
+st.image("PGI_image03.png")
+# st.image("PGI_image02.jpeg")
 st.subheader("PGI :blue[プログラミング] 講師 :sunglasses:")
 st.write("プログラミングに関して、何でも聞いてください。")
 
