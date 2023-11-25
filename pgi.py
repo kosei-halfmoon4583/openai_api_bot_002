@@ -20,12 +20,15 @@ def communicate():
     user_message = {"role": "user", "content": st.session_state["user_input"]}
     messages.append(user_message)
 
-    response = openai.ChatCompletion.create(
+#    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=messages
-    )  
+    )
 
-    bot_message = response["choices"][0]["message"]
+#    bot_message = response["choices"][0]["message"]
+# 2023/11/25 update 
+    bot_message = response.choices[0].message.content
     messages.append(bot_message)
 
     st.session_state["user_input"] = ""  # 入力欄を消去
@@ -33,7 +36,6 @@ def communicate():
 # User Interface
 import streamlit as st
 st.image("PGI_image03.png")
-# st.image("PGI_image02.jpeg")
 st.subheader("PGI :blue[プログラミング] 講師 :sunglasses:")
 st.write("プログラミングに関して、何でも聞いてください。")
 
@@ -42,8 +44,8 @@ user_input = st.text_input("メッセージを入力してください。", key=
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
 # 直近のメッセージを上に表示する
-    for message in reversed(messages[1:]):  
-        speaker = "🤓"
+    for message in reversed(messages[1:]):
+        speaker = "😎"
         if message["role"]=="assistant":
             speaker="👽"
 
