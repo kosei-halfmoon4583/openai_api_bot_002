@@ -29,7 +29,7 @@ def communicate():
 
 #    bot_message = response["choices"][0]["message"]
 # 2023/11/25 update
-#    bot_message = response.choices[0].message.content
+    bot_message = response.choices[0].message.content
     messages.append(bot_message)
 
     st.session_state["user_input"] = ""  # 入力欄を消去
