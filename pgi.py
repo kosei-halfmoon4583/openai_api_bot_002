@@ -51,5 +51,5 @@ if st.session_state["messages"]:
 #        if message[0]=="assistant":
 #            speaker="👽"
 
-#        st.write(speaker + ": " + message["content"])
-        st.write(speaker + ": " + message[1])
+        st.write(speaker + ": " + message["content"])
+#        st.write(speaker + ": " + message[1])
