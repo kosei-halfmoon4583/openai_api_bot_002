@@ -21,6 +21,7 @@ def communicate():
     messages.append(user_message)
 
 #    response = openai.ChatCompletion.create(
+# 2023/11/25 update.
     response = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=messages
@@ -37,7 +38,7 @@ def communicate():
 import streamlit as st
 st.image("PGI_image03.png")
 st.subheader("PGI :blue[プログラミング] 講師 :sunglasses:")
-st.write("プログラミングに関して、何でも聞いてください。")
+st.write("プログラミングに関してお答えします。質問をどうぞ！")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
 
