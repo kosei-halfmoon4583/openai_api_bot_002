@@ -20,16 +20,16 @@ def communicate():
     user_message = {"role": "user", "content": st.session_state["user_input"]}
     messages.append(user_message)
 
-#    response = openai.ChatCompletion.create(
+    response = openai.ChatCompletion.create(
 # 2023/11/25 update.
-    response = openai.chat.completions.create(
+#    response = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=messages
     )
 
-#    bot_message = response["choices"][0]["message"]
+    bot_message = response["choices"][0]["message"]
 # 2023/11/25 update
-    bot_message = response.choices[0].message.content
+#    bot_message = response.choices[0].message.content
     messages.append(bot_message)
 
     st.session_state["user_input"] = ""  # 入力欄を消去
