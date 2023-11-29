@@ -2,7 +2,6 @@
 import streamlit as st
 import openai
 # import secret_keys  # 外部ファイルにAPI keyを保存
-
 # openai.api_key = secret_keys.openai_api_key
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 system_prompt = st.secrets.content.system_prompt
@@ -35,7 +34,7 @@ def communicate():
     st.session_state["user_input"] = ""  # 入力欄を消去
 
 # User Interface
-import streamlit as st
+# import streamlit as st
 st.image("PGI_image03.png")
 st.subheader("PGI :blue[プログラミング] 講師 :sunglasses:")
 st.write("プログラミングに関してお答えします。質問をどうぞ！")
