@@ -17,8 +17,8 @@ if "messages" not in st.session_state:
 
 # assistant : code interpreter 設定
 assistant = client.beta.assistants.create(
-  instructions="You're personal programming tutor. You will provided with a piece of code, and your task is to explain it in a concise way."
-  model="gpt-4-1106-preview"
+  instructions="You're personal programming tutor. You will provided with a piece of code, and your task is to explain it in a concise way.",
+  model="gpt-4-1106-preview",
   tools=[{"type": "code_interpreter"}],
   file_ids=[file.id]
 )
@@ -45,7 +45,7 @@ def communicate():
 import streamlit as st
 st.image("PGI_image03.png")
 st.subheader("PGI :blue[code interpreter] :sunglasses:")
-st.write(""You're personal programming tutor. You will provided with a piece of code, and your task is to explain it in a concise way."")
+st.write("You're personal programming tutor. You will provided with a piece of code, and your task is to explain it in a concise way.")
 
 user_input = st.text_input("Please input the code", key="user_input", on_change=communicate)
 
