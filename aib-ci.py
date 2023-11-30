@@ -2,11 +2,7 @@
 import streamlit as st
 from openai import OpenAI
 
-# client = OpenAI()
-
-client = OpenAI(
-  organization='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',
-)
+client = OpenAI()
 
 # 外部ファイルにAPI keyを保存
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
