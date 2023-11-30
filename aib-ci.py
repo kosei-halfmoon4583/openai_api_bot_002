@@ -2,7 +2,11 @@
 import streamlit as st
 from openai import OpenAI
 
-client = OpenAI()
+# client = OpenAI()
+
+client = OpenAI(
+  organization='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',
+)
 
 # 外部ファイルにAPI keyを保存
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
@@ -22,7 +26,6 @@ assistant = client.beta.assistants.create(
   tools=[{"type": "code_interpreter"}],
   file_ids=[file.id]
 )
-
 
 # Function of ChatGPT API communication.
 def communicate():
