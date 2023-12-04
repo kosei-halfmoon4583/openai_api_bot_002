@@ -43,7 +43,7 @@ st.write("OpenAI APIを利用したアシスタントAIです。あらゆるプ�
 # user_input = st.text_input("解析したいプログラムを入力してください。", key="user_input", on_change=communicate)
 user_input = st.text_area("解析したいプログラムを入力してください。", key="user_input", height=400, on_change=communicate)
 
-st.write(f'あなたのプログラムは、 {len(user_input)} characters です。')
+# st.write(f'あなたのプログラムは、 {len(user_input)} characters です。')
 
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
