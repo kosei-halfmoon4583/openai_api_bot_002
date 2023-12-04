@@ -15,9 +15,9 @@ if "messages" not in st.session_state:
         {"role": "system", "content": system_prompt}
     ]
 
-# assistant : code interpreter 設定
-assistant = client.beta.assistants.create(
-  instructions="You're personal programming tutor. You will provided with a piece of code, and your task is to explain it in a concise way.",
+# codeAnalyzer : code interpreter 設定
+codeAnalyzer = client.beta.codeAnalyzers.create(
+  instructions=system_prompt,
   model="gpt-4-1106-preview",
   tools=[{"type": "code_interpreter"}],
   file_ids=[file.id]
@@ -53,7 +53,7 @@ if st.session_state["messages"]:
 # 直近のメッセージを上に表示する
     for message in reversed(messages[1:]):
         speaker = ""
-        if message["role"]=="assistant":
+        if message["role"]=="codeAnalyzer":
             speaker=""
 
         st.write(speaker + ": " + message["content"])
