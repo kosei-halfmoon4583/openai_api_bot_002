@@ -38,9 +38,12 @@ with col1:
 with col2:
     date = st.date_input("Pick a date")
 
-st.write("OpenAI APIを利用したアシスタントAIです。複雑な文章を要約したり、理解しやすく修正してくれたりします。")
+st.write("OpenAI APIを利用したアシスタントAIです。あらゆるプログラムコードを解析してくれます。")
 
-user_input = st.text_input("解析したい文章などを入力してください。", key="user_input", on_change=communicate)
+# user_input = st.text_input("解析したいプログラムを入力してください。", key="user_input", on_change=communicate)
+user_input = st.text_area("解析したいプログラムを入力してください。", key="user_input", height="400", on_change=communicate)
+
+st.write(f'あなたのプログラムは、 {len(user_input)} characters です。')
 
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
